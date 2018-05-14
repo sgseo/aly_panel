@@ -1,0 +1,40 @@
+<html>
+<head>
+<script type="text/javascript">
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+	json=JSON.parse(xmlhttp.responseText);
+	if(json.code==1){
+	alert('修改成功')
+	}
+
+	alert('修改失败')
+	
+    }
+  }
+xmlhttp.open("GET","/user/updatepassword/uid/1/regionid/cn-beijing/instanceid/i-2ze5jnl5beqr9f2xl2gu/password/awdw",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+
+<h2>AJAX</h2>
+<button type="button" onclick="loadXMLDoc()">请求数据</button>
+<div id="myDiv"></div>
+
+</body>
+</html>
