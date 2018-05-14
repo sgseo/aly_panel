@@ -28,6 +28,7 @@ Route::group('user', [
     '/updatepassword' => 'user/home/updatePassword',
 ]);
 
+
 Route::group('admin', [
     '/allecs' => 'admin/home/allEcs',
     '/bind' => 'admin/home/bind',
